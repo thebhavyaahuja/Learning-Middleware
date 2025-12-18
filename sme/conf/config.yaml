@@ -1,0 +1,226 @@
+defaults:
+  - _self_
+
+project_name: "sme"
+
+prompt: |
+  You are a helpful assistant that answers questions based on provided context.
+  
+  Instructions:
+  - Answer only based on the given context
+  - If the context doesn't contain enough information, say so clearly
+  - Provide specific references when possible
+  - Be concise and accurate
+  
+  Context:
+  {context}
+  
+  Question: {input}
+  
+  Answer:
+# RAG Configuration (for chat/RAG module)
+rag:
+  docs_path: "data/docs"
+  embedding_model_name: "all-MiniLM-L6-v2"
+  vector_store_path: "data/vector_store"
+  course_id: "EC2101"  # Course ID for selecting vector store
+
+# Learning Objectives Generator Configuration
+lo_gen:
+  # Data paths
+  docs_dir: "data/docs" 
+  vector_store_dir: "data/vector_store"
+  outputs_dir: "outputs"
+  course_id: "EC2101"  # Course ID for selecting vector store
+  
+  # Model configuration
+  embedding_model: "all-MiniLM-L6-v2"
+  
+  # Generation defaults
+  default_top_k: 5      # Number of context chunks to retrieve
+  default_n_los: 4      # Number of learning objectives to generate per module
+  
+  # Prompt template for learning objectives generation
+  main_prompt_template: |
+    You are a precise learning objectives generator. Generate ONLY a JSON array without any thinking process, explanations, or word counts.
+
+    Task: Create {n_los} learning objectives for the module: {module_title}
+
+    Context: {context}
+
+    Requirements:
+    - 8-18 words per objective
+    - Start with action verbs: Understand, Explain, Analyze, Compare, Evaluate, Describe, Identify
+    - Focus on knowledge and conceptual understanding (not implementation)
+    - Align with course content development needs
+
+    Example:
+    ["LO1",
+     "LO2",
+     "LO3"]
+
+    Generate {n_los} objectives in the same format. Output ONLY the JSON array:
+    [
+  
+  # Fallback prompt for generating additional objectives
+  fallback_prompt_template: |
+    Generate ONLY a JSON array without any thinking, explanations, or word counts.
+
+    Task: Create {remaining} additional learning objectives for: {module_title}
+    Focus: {focus}
+    Context: {context}
+    Already covered: {covered_topics}
+
+    Requirements:
+    - 8-18 words per objective
+    - Start with action verbs: Understand, Explain, Analyze, Compare, Evaluate, Describe
+    - Must be different from already covered topics
+    - Focus on theoretical and conceptual understanding
+
+    Output ONLY the JSON array:
+    [
+  
+  # Runtime parameters (can be overridden via command line)
+  modules: null         # List of module names or single module
+  modules_file: null    # Path to file containing module names (one per line)
+  top_k: null           # Override default_top_k
+  n_los: null           # Override default_n_los
+  save_path: null       # Custom output path (defaults to outputs/los-{timestamp}/los.json)
+
+# Module Content Generator Configuration
+module_gen:
+  # Input files (can be overridden via command line)
+  lo_file: "module_gen/sample_lo.json"       # Learning objectives JSON file
+  pref_file: "module_gen/sample_userpref.json"  # User preferences JSON file
+  course_id: "EC2101"  # Course ID for selecting vector store
+  
+  # Runtime parameters
+  module: null          # Module name to generate content for
+  output: null          # Custom output path
+  
+  # Model configuration
+  default_top_k_per_objective: 4  # Default number of context chunks per learning objective
+  summarization_max_tokens: 800   # Max tokens for objective summarization
+  summarization_temperature: 0.1  # Temperature for summarization
+  generation_temperature: 0.3     # Temperature for content generation
+  
+  # Prompt templates
+  summarization_prompt_template: |
+    Summarize the key information for this learning objective in a brief paragraph.
+
+    Objective: {objective}
+
+    Context:
+    {context}
+
+    Write a concise paragraph (3-4 sentences, maximum 100 words) that captures the essential concepts, definitions, and examples. Do not explain your reasoning, just write the summary.
+
+    Summary:
+  
+  content_generation_prompt_template: |
+    You are creating comprehensive educational module content in markdown format.
+
+    Module: {module_name}
+
+    Learning Objectives to Cover:
+    {objectives_text}
+
+    {pref_text}
+
+    Reference Material (use as context, do not copy verbatim):
+    {reference_context}
+
+    Instructions:
+    1. Create well-structured content that teaches ALL learning objectives above
+    2. Use the reference material as background knowledge to create original, comprehensive explanations
+    3. Expand beyond the references with detailed explanations, examples, and practical applications
+    4. Use markdown formatting: ##/### headers, **bold**, *italic*, ```code```, tables, lists
+    5. Include concrete examples, use cases, and technical details
+    6. Adapt writing style to match user preferences
+    7. Ensure logical progression and smooth transitions between topics
+    8. Do NOT simply present the reference summaries - synthesize and expand them into cohesive content
+
+    Generate complete, well-structured module content:
+
+    # {module_name}
+
+  # User preference formatting template
+  user_preference_format: |
+    User Learning Preferences:
+    - Detail Level: {detail_level} ({detail_desc})
+    - Explanation Style: {explanation_style} ({explanation_desc})
+    - Language: {language_style} ({language_desc})
+
+quiz_gen:
+  # --- Input Configuration ---
+  # (Required) Path to the module's markdown file.
+  # Can be set via command line: quiz_gen.module_content_path="path/to/your/module.md"
+  module_content_path: null
+
+  # (Optional) Override the module name extracted from the markdown file's H1 title.
+  module_name: null
+
+  # (Optional) Course ID for selecting a course-specific vector store for RAG.
+  course_id: "EC2101"
+
+  # --- Output Configuration ---
+  # Directory where the generated quiz JSON files will be saved.
+  output_dir: "outputs/quizzes"
+
+  # (Optional) Specify a full path for the output file to override the default naming scheme.
+  # Default: quiz-{module_name}-{timestamp}.json
+  output_file: null
+
+  # --- Generation Parameters ---
+  # The total number of questions to generate for the entire module.
+  num_questions: 5
+
+  # The temperature for the LLM. Lower values (e.g., 0.2) produce more deterministic results.
+  temperature: 0.3
+
+  # Number of relevant documents to retrieve from the vector store to use as context.
+  retrieval_top_k: 3
+
+  # --- Question Type Configuration ---
+  # Defines settings for Multiple Choice Questions.
+  mcq:
+    num_options: 4 # Number of answer options to generate for each question.
+
+  # A list of question types to generate. Currently supports "mcq".
+  question_types: ["mcq"]
+
+  # --- Prompt Template ---
+  # This template guides the LLM to generate structured JSON output.
+  # It explicitly defines the expected schema and field descriptions.
+  quiz_generation_prompt_template: |
+    You are an expert AI assistant specializing in educational content. Your task is to generate a high-quality quiz in a valid JSON format based on the provided module content.
+
+    **Instructions:**
+    1.  Carefully analyze the entire **Module Content** provided below.
+    2.  Use the **Retrieved Context from Knowledge Base** for additional facts and depth.
+    3.  Generate exactly **{num_questions}** unique, high-quality multiple-choice questions.
+    4.  Ensure the final output is a single, valid JSON object that strictly adheres to the specified **JSON Schema**. Do not include any text, explanations, or markdown formatting outside of the JSON structure.
+
+    ---
+    **Module Content:**
+    {module_content}
+    ---
+    **Retrieved Context from Knowledge Base:**
+    {retrieved_context}
+    ---
+    **JSON Schema and Field Descriptions:**
+    Your output MUST be a JSON object with a single root key "questions", which is a list of question objects. Each question object must have the following fields:
+
+    - `id` (integer): A unique sequential identifier for the question, starting from 1.
+    - `type` (string): The question type. Set this to "mcq".
+    - `question` (string): The full, clear text of the question.
+    - `options` (list of strings): A list containing exactly {num_options} possible answers. Each option should be a complete string (e.g., "A) Option Text").
+    - `correct_answer` (string): The label of the correct option (e.g., "A").
+    - `explanation` (string): A concise but thorough explanation of why the correct answer is right, referencing concepts from the provided content.
+    - `topic` (string): The primary topic or sub-section from the module content that the question addresses.
+
+  # Runtime parameters (can be overridden via command line)
+  module_path: null             # Override module_content_path
+  output: null                  # Override output_file
+  questions: null               # Override num_questions
+  types: null                   # Override question_types

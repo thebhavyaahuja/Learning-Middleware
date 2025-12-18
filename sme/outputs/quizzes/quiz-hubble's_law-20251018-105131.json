@@ -1,0 +1,88 @@
+{
+  "quiz_metadata": {
+    "module_name": "Hubble's Law",
+    "total_questions": 5,
+    "question_types": [
+      "mcq"
+    ],
+    "generated_at": "2025-10-18T10:51:31Z",
+    "generation_method": "langgraph_vllm_full_content",
+    "generation_config": {
+      "chunking_method": "full_content",
+      "num_questions": 5,
+      "temperature": 0.3
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "mcq",
+      "question": "According to Hubble's Law, what is the relationship between the recession velocity of galaxies and their distance from us?",
+      "options": [
+        "A) Recession velocity is inversely proportional to distance",
+        "B) Recession velocity is directly proportional to distance",
+        "C) Recession velocity is independent of distance",
+        "D) Recession velocity is proportional to the square of distance"
+      ],
+      "correct_answer": "B",
+      "explanation": "Hubble's Law states that the recession velocity of galaxies is directly proportional to their distance from us. This is expressed as v = H0 * r, where v is the recession velocity, r is the distance, and H0 is the Hubble constant. This direct proportionality is a key feature of Hubble's Law and is supported by observations of redshift in distant galaxies.",
+      "topic": "Understanding Hubble's Law and the Expansion of the Universe"
+    },
+    {
+      "id": 2,
+      "type": "mcq",
+      "question": "What is the significance of the cosmological principle in the context of Hubble's Law?",
+      "options": [
+        "A) It explains why the universe is expanding at an accelerating rate",
+        "B) It ensures that the expansion of the universe is uniform and not dependent on location",
+        "C) It provides a method to calculate the Hubble constant",
+        "D) It allows for the prediction of the exact age of the universe"
+      ],
+      "correct_answer": "B",
+      "explanation": "The cosmological principle is crucial to Hubble's Law as it ensures that the expansion of the universe is uniform and not dependent on location. This principle states that the universe is homogeneous and isotropic on large scales, which means that the expansion is the same everywhere. This uniformity is essential for Hubble's Law to accurately describe the expansion of the universe.",
+      "topic": "The Cosmological Principle and Uniform Expansion"
+    },
+    {
+      "id": 3,
+      "type": "mcq",
+      "question": "How does the scale factor $ a(t) $ relate to the distances between objects in an expanding universe?",
+      "options": [
+        "A) Distances between objects remain constant over time",
+        "B) Distances between objects scale linearly with $ a(t) $",
+        "C) Distances between objects scale exponentially with $ a(t) $",
+        "D) Distances between objects scale inversely with $ a(t) $"
+      ],
+      "correct_answer": "B",
+      "explanation": "The scale factor $ a(t) $ describes how the universe's size changes over time. Distances between objects scale linearly with $ a(t) $, meaning that as $ a(t) $ increases, distances grow proportionally. This ensures that the universe's structure remains homogeneous and isotropic, with the same relative distances and shapes at all times.",
+      "topic": "Scaling Distances with the Scale Factor $ a(t) $"
+    },
+    {
+      "id": 4,
+      "type": "mcq",
+      "question": "What does Hubble's Law provide evidence for in relation to the Big Bang theory?",
+      "options": [
+        "A) That the universe is static and unchanging",
+        "B) That the universe is expanding and had a beginning",
+        "C) That the universe is contracting and will end in a Big Crunch",
+        "D) That the universe is composed of dark matter and dark energy"
+      ],
+      "correct_answer": "B",
+      "explanation": "Hubble's Law provides evidence for the Big Bang theory by showing that the universe is expanding. This expansion suggests that the universe was once smaller and denser, supporting the idea that it began as a singularity. The Hubble constant helps estimate the age of the universe, which is approximately 13.8 billion years, consistent with the Big Bang theory.",
+      "topic": "Hubble's Law and the Big Bang Theory"
+    },
+    {
+      "id": 5,
+      "type": "mcq",
+      "question": "What is the primary use of Hubble's Law in cosmology?",
+      "options": [
+        "A) To calculate the exact age of the universe",
+        "B) To measure the expansion rate of the universe",
+        "C) To determine the exact composition of the universe",
+        "D) To predict the future structure of the universe"
+      ],
+      "correct_answer": "B",
+      "explanation": "Hubble's Law is primarily used to measure the expansion rate of the universe. It provides a direct relationship between the recession velocity of galaxies and their distance, allowing astronomers to study the rate at which the universe is expanding. This is crucial for understanding the universe's structure, history, and future.",
+      "topic": "Understanding Hubble's Law and the Expansion of the Universe"
+    }
+  ]
+}

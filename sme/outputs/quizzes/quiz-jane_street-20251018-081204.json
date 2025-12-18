@@ -1,0 +1,88 @@
+{
+  "quiz_metadata": {
+    "module_name": "Jane Street",
+    "total_questions": 5,
+    "question_types": [
+      "mcq"
+    ],
+    "generated_at": "2025-10-18T08:12:04Z",
+    "generation_method": "langgraph_vllm_full_content",
+    "generation_config": {
+      "chunking_method": "full_content",
+      "num_questions": 5,
+      "temperature": 0.3
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "mcq",
+      "question": "What is Jane Street primarily known for in the context of quantitative trading?",
+      "options": [
+        "A) Providing financial advice to individual investors",
+        "B) Using mathematical models to predict stock prices",
+        "C) Offering stock trading courses to students",
+        "D) Managing large portfolios for high-net-worth individuals"
+      ],
+      "correct_answer": "B",
+      "explanation": "Jane Street is primarily known for using mathematical models to predict stock prices and execute trades based on data-driven strategies. The firm focuses on quantitative models, real-time data, and collaborative problem-solving to make trading decisions, as described in the module content.",
+      "topic": "What is Jane Street?"
+    },
+    {
+      "id": 2,
+      "type": "mcq",
+      "question": "How does Jane Street differ from traditional trading firms?",
+      "options": [
+        "A) It relies on human intuition for decision-making",
+        "B) It uses mathematical models and data analysis for trading",
+        "C) It focuses on long-term investment strategies",
+        "D) It avoids using real-time market data"
+      ],
+      "correct_answer": "B",
+      "explanation": "Jane Street differs from traditional trading firms by using mathematical models and data analysis for trading decisions. Unlike traditional firms that rely on human intuition or market rumors, Jane Street uses quantitative models, real-time data, and collaborative teams to make trading decisions, as described in the module content.",
+      "topic": "What is Jane Street?"
+    },
+    {
+      "id": 3,
+      "type": "mcq",
+      "question": "What is the primary goal of Jane Street's approach to quantitative trading?",
+      "options": [
+        "A) To maximize short-term profits through speculation",
+        "B) To turn theory into practical, real-world applications",
+        "C) To provide financial advice to institutional investors",
+        "D) To develop new financial instruments for the market"
+      ],
+      "correct_answer": "B",
+      "explanation": "The primary goal of Jane Street's approach to quantitative trading is to turn theory into practical, real-world applications. The module emphasizes that Jane Street focuses on applying concepts through small projects and real-world examples, as opposed to just theoretical learning, to build trading intuition and skills.",
+      "topic": "Why This Matters for You"
+    },
+    {
+      "id": 4,
+      "type": "mcq",
+      "question": "What is the main benefit of Jane Street's collaborative culture?",
+      "options": [
+        "A) It allows for faster decision-making by individual traders",
+        "B) It ensures that all traders work independently to avoid conflicts",
+        "C) It enables teams to test and refine models together",
+        "D) It prevents traders from making mistakes"
+      ],
+      "correct_answer": "C",
+      "explanation": "The main benefit of Jane Street's collaborative culture is that it enables teams to test and refine models together. The module explains that Jane Street's teams work together to debug models and solve problems, which helps in refining strategies and avoiding costly mistakes in real markets.",
+      "topic": "Key Principles of Jane Street"
+    },
+    {
+      "id": 5,
+      "type": "mcq",
+      "question": "What is the key principle that helps Jane Street avoid emotional trading decisions?",
+      "options": [
+        "A) The principle of continuous learning",
+        "B) The principle of quantitative focus",
+        "C) The principle of collaborative culture",
+        "D) The principle of real-time data analysis"
+      ],
+      "correct_answer": "B",
+      "explanation": "The key principle that helps Jane Street avoid emotional trading decisions is the principle of quantitative focus. The module explains that Jane Street's decisions are based on math and data, not gut feelings, which helps in avoiding emotional trading and making more objective decisions.",
+      "topic": "Key Principles of Jane Street"
+    }
+  ]
+}

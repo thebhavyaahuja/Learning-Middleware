@@ -1,0 +1,109 @@
+{
+  "quiz_metadata": {
+    "module_name": "Jane Street",
+    "total_questions": 6,
+    "question_types": [
+      "mcq"
+    ],
+    "generated_at": "2025-10-17T01:33:09Z",
+    "generation_method": "langgraph_agent",
+    "chunks_processed": 4,
+    "generation_config": {
+      "chunking_method": "markdown_headers",
+      "questions_per_chunk": 1,
+      "temperature": 0.3
+    }
+  },
+  "questions": [
+    {
+      "question": "What is the primary approach of Jane Street in quantitative trading?",
+      "options": [
+        "A) Relying on human intuition and market rumors",
+        "B) Using mathematical models, real-time data, and collaborative teams",
+        "C) Focusing solely on historical data without live market feeds",
+        "D) Prioritizing trading volume over price movements"
+      ],
+      "correct_answer": "B",
+      "explanation": "Jane Street is a real-world quantitative trading firm that builds strategies using math, data, and programming. The firm's approach specifically involves quantitative models, real-time market data, and collaborative teams to make trading decisions—distinct from traditional firms that rely on human intuition. This practical methodology aligns with the firm's emphasis on hands-on experience highlighted in candidate applications.",
+      "topic": "Jane Street's Approach to Trading",
+      "type": "mcq",
+      "chunk_index": 0,
+      "id": 1
+    },
+    {
+      "question": "How would a student apply the concept of statistical arbitrage as described in the module?",
+      "options": [
+        "A) By predicting stock prices using complex machine learning models without real-time data",
+        "B) By tracking two stocks and creating a rule that triggers a trade when one stock drops 2% and another rises 1% during market volatility",
+        "C) By building a model that only uses historical price data to forecast future prices",
+        "D) By simulating trades in a controlled environment without actual market participation"
+      ],
+      "correct_answer": "B",
+      "explanation": "The module describes a concrete example where a student intern implemented a statistical arbitrage model triggering a trade when one stock drops 2% while another rises 1% during market volatility. This direct application of the concept—observing real-time price patterns during events like news—matches the hands-on practice described in the module and reflects the practical project focus emphasized in candidate applications.",
+      "topic": "Applying Statistical Arbitrage",
+      "type": "mcq",
+      "chunk_index": 1,
+      "id": 2
+    },
+    {
+      "question": "Why does Jane Street emphasize real projects over theory in their internships?",
+      "options": [
+        "A) To reduce the cost of hiring interns",
+        "B) To build trading intuition through hands-on experience with live data",
+        "C) To avoid the need for complex mathematical models",
+        "D) To ensure interns learn only what is immediately useful for trading"
+      ],
+      "correct_answer": "B",
+      "explanation": "Jane Street emphasizes real projects over theory to develop trading intuition—the ability to quickly spot opportunities in live markets. This approach turns theoretical concepts into actionable skills, as demonstrated in the module's hands-on practice examples. Candidate applications further confirm this focus, highlighting how practical projects with real data build the intuition Jane Street values for successful traders.",
+      "topic": "Why Jane Street Emphasizes Real Projects",
+      "type": "mcq",
+      "chunk_index": 0,
+      "id": 3
+    },
+    {
+      "question": "During the 2020 market crash, Jane Street's teams rapidly shifted from long-term to short-term volatility-based trades. Which principle BEST explains why they could implement this adaptation so quickly?",
+      "options": [
+        "A) Quantitative Focus (decisions based on math/data, not gut feelings)",
+        "B) Collaborative Culture (teams debug models together)",
+        "C) Continuous Learning (test ideas in simulations before live trading)",
+        "D) All three principles working together"
+      ],
+      "correct_answer": "D",
+      "explanation": "The module explicitly states that Jane Street's rapid adaptation during the 2020 crash resulted from the interaction of all three principles: they tested ideas in simulations first (Continuous Learning), worked together to refine models (Collaborative Culture), and used math to avoid emotional decisions (Quantitative Focus). The knowledge base context shows candidates emphasize simulated environments for practical application, where projects like reinforcement learning implementations in controlled settings directly reflect this integrated approach to real-world market adaptation.",
+      "topic": "Real-world application of Jane Street's principles",
+      "type": "mcq",
+      "chunk_index": 2,
+      "id": 4
+    },
+    {
+      "question": "According to the module's action plan, what is the FIRST step for someone starting to apply Jane Street's principles to their own trading practice?",
+      "options": [
+        "A) Build a complex mathematical model for predicting market movements",
+        "B) Identify a small, manageable concept (e.g., 'tracking price changes') and do a tiny project (5 minutes max)",
+        "C) Join a competitive trading competition to test strategies",
+        "D) Seek out a mentor to guide them through the entire trading process"
+      ],
+      "correct_answer": "B",
+      "explanation": "The module's 'Your action plan' clearly states that the first step is to 'pick one concept from the table above (e.g., 'tracking price changes') and do a tiny project (5 minutes max)'. This aligns with the knowledge base context where candidates describe practical projects like implementing linear solvers in reinforcement learning environments as examples of applying concepts through immediate, small-scale actions rather than complex models or external competitions.",
+      "topic": "Action plan for beginners",
+      "type": "mcq",
+      "chunk_index": 3,
+      "id": 5
+    },
+    {
+      "question": "A candidate's project implementing reinforcement learning algorithms to solve linear systems in a simulated trading environment BEST exemplifies which Jane Street principle?",
+      "options": [
+        "A) Quantitative Focus (using math to avoid emotional decisions)",
+        "B) Collaborative Culture (working with others to debug models)",
+        "C) Continuous Learning (testing ideas in simulations before live trading)",
+        "D) All three principles"
+      ],
+      "correct_answer": "C",
+      "explanation": "The module emphasizes that Continuous Learning specifically involves 'testing ideas in simulations before live trading'. The candidate's project uses a simulated trading environment to implement reinforcement learning algorithms, directly matching this principle. The knowledge base context highlights how such projects build 'trading intuition through simulated sessions' and 'put learned concepts into immediate practical use', demonstrating the core practice of validating ideas in controlled environments before real-world deployment.",
+      "topic": "Integration of principles in candidate projects",
+      "type": "mcq",
+      "chunk_index": 2,
+      "id": 6
+    }
+  ]
+}
