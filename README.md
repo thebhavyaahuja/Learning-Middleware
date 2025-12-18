@@ -1,4 +1,4 @@
-# Learning Middleware (LMW) - iREL
+# Learning Middleware (LMW) 
 
 An AI-powered adaptive learning platform that personalizes educational content for each learner using LLM-based content generation.
 
